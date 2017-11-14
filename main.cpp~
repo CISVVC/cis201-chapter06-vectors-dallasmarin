@@ -19,27 +19,27 @@ int main()
     int j = 0;
     bool b = true;
 
-    vector <int> day;//three vectors store day, amount, and description
+    vector <int> day;
     vector <float> amount;
     vector <string> description;
 
-    day.push_back(1);//stores initial or first entry in vector
+    day.push_back(1);//store initial or first entry in vector
     amount.push_back(1143.24);
     description.push_back("initial balance");
     
     cout << "press 0 to stop giving inputs\n";
     cout << "enter inputs in form: day amount description\n\n";
 
-    while(b)
+    while (b)
     {
-        cin >> d;//gets day from user
+        cin >> d;
         if(d==0)
         {
             b = false;
         }
         else
         {
-            cin >> a;//gets amount from user
+            cin >> a;
             getline(cin,s);
             day.push_back(a);
             description.push_back(s);
@@ -63,17 +63,17 @@ int main()
             cout << day[j] << "\t" << amount[j] << description[j] << "\t\t" << balance << endl;
             j++;
         }
-        average = average + balance;//Calculate the average daily balance of 30 days
-        minimum = minimum + balance2;//calculate the minimum daily balance of 30 days
+        average = average + balance;
+        minimum = minimum + balance2;
         balance2 = balance;
     }
 
-    float apr = 0.5/100;//Calculates the rate of interest
-    float cycle = (float)30/365;//Calculates the cycle for 30 days to find the minimum and average daily balance interest.
-    min_interest = apr * cycle * minimum;//Calculate average and minimum daily balance interest.
+    float apr = 0.5/100;//Calculate rate of interest
+    float cycle = (float)30/365;
+    min_interest = apr * cycle * minimum;
     avg_interest = apr * cycle * average;
     cout << "\n";
-    cout << "Interest according to minimum daily balance: " << min_interest << endl;//Display average and minimum daily balance interest
+    cout << "Interest according to minimum daily balance: " << min_interest << endl;
     cout << "Interest according to average daily balance: " << avg_interest << endl;
 
     return 0;
